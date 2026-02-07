@@ -81,3 +81,13 @@ export function Home() {
     )
 }
 
+/*
+    Explicar la carpeta mock
+    Explicar como funciona el css en react
+    Explicar los hooks
+    Explicar el useState
+    Explicar el useEffect
+    Buscar más ejemplos de hooks usestate
+    colocar el audio al hacer click
+
+*/
