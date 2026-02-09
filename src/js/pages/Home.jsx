@@ -1,40 +1,30 @@
 import { Button } from "../components/Button"
 import TitleMain from "../components/TitleMain"
+import products from "../../../mocks/products.json"
+import audioFile from "./t-rex-roar.mp3"
+import externocleidomastoideo from "../../img/rigo-baby.jpg"
+import { Counter } from "../components/Counter"
 
 export function Home() {
     // javascript puro y duro
 
     function handleFunction(name) {
-
         alert(`Hola ¿qué tal ${name}?`)
-
     }
 
-    const productos = [
-        { id: 1, name: "Laptop Pro 14", category: "Computadoras" },
-        { id: 2, name: "iPhone 15", category: "Smartphones" },
-        { id: 3, name: "Monitor 4K", category: "Periféricos" },
-        { id: 4, name: "Teclado Mecánico", category: "Periféricos" },
-        { id: 5, name: "Samsung Galaxy S23", category: "Smartphones" },
-        { id: 6, name: "MacBookcolocar el audio al hacer click Air", category: "Computadoras" },
-        { id: 7, name: "Mouse Inalámbrico", category: "Periféricos" },
-        { id: 8, name: "iPad Air", category: "Tablets" },
-        { id: 9, name: "Sony WH-1000XM5", category: "Audio" },
-        { id: 10, name: "AirPods Pro", category: "Audio" },
-        { id: 11, name: "Kindle Paperwhite", category: "E-readers" },
-        { id: 12, name: "Apple Watch Series 9", category: "Wearables" },
-        { id: 13, name: "Nintendo Switch", category: "Consolas" },
-        { id: 14, name: "PlayStation 5", category: "Consolas" },
-        { id: 15, name: "Cámara Canon EOS R6", category: "Fotografía" },
-        { id: 16, name: "Trípode Profesional", category: "Fotografía" },
-        { id: 17, name: "Disco Duro Externo 2TB", category: "Almacenamiento" },
-        { id: 18, name: "Tarjeta MicroSD 256GB", category: "Almacenamiento" },
-        { id: 19, name: "Silla Gamer", category: "Muebles" },
-        { id: 20, name: "Escritorio Elevable", category: "Muebles" }
-    ];
+
+    function reproductor() {
+        const exampleAudio = new Audio(audioFile)
+        exampleAudio.play()
+        console.log(exampleAudio)
+    }
 
     return (
         <>
+
+            <Counter />
+
+
             <h1 className="title-main">Hola ¿qué tal?</h1>
             <TitleMain
                 text={"Este es mi primer propiedad"}
@@ -54,11 +44,20 @@ export function Home() {
                 classname="btn btn-outline-success mb-5"
                 handleFunction={() => { console.log("Hola desde la console") }}
             />
+            <br />
+            <button
+                onClick={() => reproductor()}
+                className="btn btn-danger"
+            >
+                reproductor
+            </button>
+
+            <img src={externocleidomastoideo} alt="" />
 
             <br />
             <ul>
                 {
-                    productos.map((item, index, arr) => {
+                    products.map((item, index, arr) => {
                         return (
                             <li
                                 key={item.id}
@@ -79,13 +78,3 @@ export function Home() {
     )
 }
 
-/*
-    Explicar la carpeta mock
-    Explicar como funciona el css en react
-    Explicar los hooks
-    Explicar el useState
-    Explicar el useEffect
-    Buscar más ejemplos de hooks usestate
-    colocar el audio al hacer click
-
-*/
